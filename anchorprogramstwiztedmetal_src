@@ -1,0 +1,43 @@
+use anchor_lang::prelude::*;
+
+declare_id!("TwiztedMetal11111111111111111111111111111111");
+
+#[program]
+pub mod twizted_metal {
+    use super::*;
+
+    pub fn initialize(ctx: Context<Initialize>) -> Result<()> {
+        Ok(())
+    }
+
+    /// Register a new player using a ZK identity commitment
+    pub fn register_player(ctx: Context<RegisterPlayer>, zk_commitment: [u8; 32]) -> Result<()> {
+        let player = &mut ctx.accounts.player;
+        player.authority = *ctx.accounts.authority.key;
+        player.zk_commitment = zk_commitment;
+        Ok(())
+    }
+}
+
+#[derive(Accounts)]
+pub struct Initialize<'info> {
+    #[account(mut, signer)]
+    pub authority: AccountInfo<'info>,
+    pub system_program: Program<'info, System>,
+}
+
+#[account]
+pub struct Player {
+    pub authority: Pubkey,
+    pub zk_commitment: [u8; 32],
+    // Add more fields for in-game stats, position, etc.
+}
+
+#[derive(Accounts)]
+pub struct RegisterPlayer<'info> {
+    #[account(init, payer = authority, space = 8 + 32 + 32)]
+    pub player: Account<'info, Player>,
+    #[account(mut, signer)]
+    pub authority: AccountInfo<'info>,
+    pub system_program: Program<'info, System>,
+}
