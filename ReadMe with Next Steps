@@ -1,0 +1,14 @@
+# Twizted Metal ZK DeFi
+
+A privacy-preserving DeFi game dApp with anonymous ZK ID, built with Anchor (Rust), Circom, and React, deployable on GitHub Pages.
+
+## Structure
+- `anchor/` — Solana Anchor smart contracts
+- `circom/` — ZK identity circuits
+- `frontend/` — React frontend (for GitHub Pages)
+
+## Next Steps
+1. Implement Anchor game/DeFi logic and ZK identity verification
+2. Build out Circom circuit for ZK identity
+3. Integrate zkSNARK proof generation on frontend
+4. Connect frontend to Anchor via wallet and ZK proof
