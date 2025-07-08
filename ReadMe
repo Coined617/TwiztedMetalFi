@@ -1,0 +1,32 @@
+# Twizted Metal ZK DeFi League
+
+## Overview
+
+- Tournaments & Leagues with anonymous registration (ZK)
+- DeFi integration: borrow/lend with Fluid/Solend
+- SOL staking/wagering for matches
+
+## Structure
+
+- `anchor/` — Solana Anchor contracts
+- `circom/` — ZK circuits
+- `frontend/` — React frontend
+
+## Getting Started
+
+1. **Anchor**
+    - Install [Anchor](https://project-serum.github.io/anchor/getting-started/installation.html)
+    - `cd anchor && anchor build`
+2. **Circom**
+    - Install [Circom](https://docs.circom.io/getting-started/installation/)
+    - Compile circuits: `circom identity.circom --r1cs --wasm --sym`
+3. **Frontend**
+    - `cd frontend && npm install`
+    - `npm run dev` or deploy to GitHub Pages
+
+## TODO
+
+- Implement tournament actions and payout logic in Anchor
+- Circom circuit for ZK registration
+- Frontend flows for games, staking, and lending/borrowing
+- Integrate with Fluid/Solend protocols
