@@ -5,7 +5,6 @@ template ZKIdentity() {
     signal input identityTrapdoor;
     signal output commitment;
 
-    // A simple hash commitment (use Poseidon or MiMC for real ZK)
     commitment <== identityNullifier + identityTrapdoor;
 }
 
