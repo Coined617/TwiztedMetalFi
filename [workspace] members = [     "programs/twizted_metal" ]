@@ -1,0 +1,4 @@
+[workspace]
+members = [
+    "programs/twizted_metal"
+]
