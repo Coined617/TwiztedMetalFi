@@ -1,0 +1,24 @@
+twizted-metal-zk-defi/
+├── anchor/
+│   ├── Cargo.toml
+│   ├── Anchor.toml
+│   ├── programs/
+│   │   └── twizted_metal/
+│   │       ├── Cargo.toml
+│   │       └── src/
+│   │           └── lib.rs
+│   └── tests/
+│       └── twizted_metal.js
+├── circom/
+│   └── identity.circom
+├── frontend/
+│   ├── package.json
+│   ├── vite.config.ts
+│   ├── tsconfig.json
+│   ├── public/
+│   └── src/
+│       ├── App.tsx
+│       └── zk/
+│           └── identity.ts
+├── .gitignore
+└── README.md
